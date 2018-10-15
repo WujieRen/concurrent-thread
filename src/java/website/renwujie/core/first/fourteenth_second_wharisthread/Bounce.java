@@ -1,6 +1,6 @@
-package website.renwujie.core.first.fourth_first;
+package website.renwujie.core.first.fourteenth_second_wharisthread;
 
-import website.renwujie.core.first.fourteenth_second_wharisthread.BounceFrame;
+import website.renwujie.core.first.fourth_first.BounceFrame;
 
 import javax.swing.*;
 import java.awt.*;
