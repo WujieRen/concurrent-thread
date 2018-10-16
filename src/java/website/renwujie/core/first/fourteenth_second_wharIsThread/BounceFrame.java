@@ -1,4 +1,4 @@
-package website.renwujie.core.first.fourteenth_second_wharisthread;
+package website.renwujie.core.first.fourteenth_second_wharIsThread;
 
 import website.renwujie.core.first.fourth_first.Ball;
 import website.renwujie.core.first.fourth_first.Ballcomponent;
