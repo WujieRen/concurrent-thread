@@ -3,8 +3,8 @@ package website.renwujie.core.first.fourteenth_fourth_blockingQueueDemo;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingDeque;
 
 /**
  * <p>
@@ -15,7 +15,7 @@ import java.util.concurrent.LinkedBlockingDeque;
  */
 public class FileTest {
     private static final int SEARCH_THREADS = 100;
-    private static final BlockingQueue<String> queue = new LinkedBlockingDeque<>();
+    private static final BlockingQueue<String> queue = new ArrayBlockingQueue<String>(1000000);
     private static final ThreadLocal<String> str =
             ThreadLocal.withInitial(() -> "1 : 2 : 3 : 4 : 5 : 6 : 7 : 8 : 9 : 0 \n");
     private static int count;
@@ -26,7 +26,7 @@ public class FileTest {
         read(bw);
     }
 
-    public static void put() {
+    private static void put() {
         Runnable r = () -> {
             while(true) {
                 try {
@@ -41,7 +41,7 @@ public class FileTest {
         new Thread(r).start();
     }
 
-    public static void read(BufferedWriter bw) throws IOException {
+    private static void read(BufferedWriter bw) throws IOException {
         for(int i = 0; i < SEARCH_THREADS; i++) {
             Runnable r = () -> {
                 try {
